@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    a:hover{
+        color: #ecf0f1 !important;
+    }
+</style>
+
+<div class="row ">
+    <div class="col-lg-8 col-lg-offset-2" ">
+        <div class="panel panel-default">
+            <div class="panel-heading " style="background-color: darkgray;">
+                <h3 class="panel-title" style="text-align: center;font-weight: bold;">Movcud Suallar</h3>
+            </div>
+                
+            <ul class="list-group">
+                {% for poll in polls %}
+                    <li class="list-group-item">
+                        <strong>{{poll.question}}</strong>
+                        <span class="pull-right">
+                            <a href="{% url 'vote' poll.id %}" class="btn btn-primary btn-xs">Ses Ver</a> &nbsp;
+                            <a href="{% url 'results' poll.id %}" class="btn btn-danger btn-xs">Neticeni Gor</a> &nbsp;
+                        </span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

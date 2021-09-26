@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netice</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading" style='background-color:steelblue; color: #fff;text-align: center;'>
+                <h3 class="panel-title">Sesverme Neticesi</h3>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{poll.question}}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{poll.option_one}} &mdash; <strong>{{poll.option_one_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_two}} &mdash; <strong>{{poll.option_two_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_three}} &mdash; <strong>{{poll.option_three_count}}</strong></li>
+            </ul>
+
+            <div class="panel-footer" style="background-color: steelblue;color: #fff;font-weight: bold;position: relative;float: right;">
+                Cem: <strong>{{poll.cem}}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock content %}
